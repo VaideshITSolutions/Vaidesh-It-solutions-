@@ -1,22 +1,22 @@
-/* =========================================
+/* =========================================================
    VAIDESH IT SOLUTIONS
    MAIN JAVASCRIPT
-========================================= */
+========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =========================================
-       SCROLL REVEAL ANIMATION
-    ========================================= */
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
 
     const revealElements = document.querySelectorAll(
-        ".info-card, .catalog-card, .product-item, .contact-card, .section-heading, .hero-text, .hero-card"
+        ".info-card, .catalog-card, .contact-card, .section-heading, .hero-text, .hero-card, .cta-content"
     );
 
     if ("IntersectionObserver" in window) {
 
         const observer = new IntersectionObserver(
-            (entries, observer) => {
+            (entries, observerInstance) => {
 
                 entries.forEach((entry) => {
 
@@ -24,14 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         entry.target.classList.add("reveal-visible");
 
-                        observer.unobserve(entry.target);
+                        observerInstance.unobserve(entry.target);
                     }
 
                 });
 
             },
             {
-                threshold: 0.12
+                threshold: 0.12,
+                rootMargin: "0px 0px -30px 0px"
             }
         );
 
@@ -52,36 +53,56 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* =========================================
+    /* =====================================================
        ACTIVE NAVIGATION
-    ========================================= */
-
-    const currentPage =
-        window.location.pathname.split("/").pop() || "index.html";
+    ===================================================== */
 
     const navLinks = document.querySelectorAll(".nav-links a");
 
-    navLinks.forEach((link) => {
+    const sections = document.querySelectorAll(
+        "main section[id]"
+    );
 
-        const linkPage =
-            link.getAttribute("href").split("/").pop();
+    function updateActiveNavigation() {
 
-        if (linkPage === currentPage) {
+        let currentSection = "home";
 
-            link.classList.add("active");
+        sections.forEach((section) => {
 
-        } else {
+            const sectionTop = section.offsetTop - 140;
 
-            link.classList.remove("active");
+            if (window.scrollY >= sectionTop) {
+                currentSection = section.id;
+            }
 
-        }
+        });
 
-    });
+        navLinks.forEach((link) => {
+
+            const href = link.getAttribute("href");
+
+            if (href === `#${currentSection}`) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+
+        });
+
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
+    );
+
+    updateActiveNavigation();
 
 
-    /* =========================================
+    /* =====================================================
        MOBILE MENU
-    ========================================= */
+    ===================================================== */
 
     const navContainer =
         document.querySelector(".nav-container");
@@ -94,11 +115,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const menuButton =
             document.createElement("button");
 
-        menuButton.className = "mobile-menu-button";
+        menuButton.className =
+            "mobile-menu-button";
 
         menuButton.setAttribute(
             "aria-label",
             "Open navigation menu"
+        );
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
         );
 
         menuButton.innerHTML = `
@@ -112,9 +139,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         menuButton.addEventListener("click", () => {
 
-            nav.classList.toggle("mobile-open");
+            const isOpen =
+                nav.classList.toggle("mobile-open");
 
-            menuButton.classList.toggle("open");
+            menuButton.classList.toggle(
+                "open",
+                isOpen
+            );
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                String(isOpen)
+            );
 
         });
 
@@ -123,29 +159,68 @@ document.addEventListener("DOMContentLoaded", () => {
 
             link.addEventListener("click", () => {
 
-                nav.classList.remove("mobile-open");
+                nav.classList.remove(
+                    "mobile-open"
+                );
 
-                menuButton.classList.remove("open");
+                menuButton.classList.remove(
+                    "open"
+                );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
 
             });
+
+        });
+
+
+        document.addEventListener("click", (event) => {
+
+            if (
+                !nav.contains(event.target) &&
+                !menuButton.contains(event.target)
+            ) {
+
+                nav.classList.remove(
+                    "mobile-open"
+                );
+
+                menuButton.classList.remove(
+                    "open"
+                );
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
 
         });
 
     }
 
 
-    /* =========================================
+    /* =====================================================
        SMOOTH INTERNAL LINKS
-    ========================================= */
+    ===================================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    document.querySelectorAll(
+        'a[href^="#"]'
+    ).forEach((link) => {
 
         link.addEventListener("click", (event) => {
 
             const targetId =
                 link.getAttribute("href");
 
-            if (!targetId || targetId === "#") {
+            if (
+                !targetId ||
+                targetId === "#"
+            ) {
                 return;
             }
 
@@ -168,96 +243,290 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================================
+    /* =====================================================
        CONTACT FORM
-    ========================================= */
+    ===================================================== */
 
     const contactForm =
         document.querySelector(".contact-form");
 
     if (contactForm) {
 
-        contactForm.addEventListener("submit", () => {
+        contactForm.addEventListener(
+            "submit",
+            () => {
 
-            const submitButton =
-                contactForm.querySelector(".form-submit");
+                const submitButton =
+                    contactForm.querySelector(
+                        ".form-submit"
+                    );
 
-            if (submitButton) {
+                if (submitButton) {
 
-                submitButton.textContent =
-                    "Sending...";
+                    submitButton.textContent =
+                        "Sending...";
 
-                submitButton.disabled = true;
+                    submitButton.disabled =
+                        true;
+
+                }
 
             }
-
-        });
+        );
 
     }
 
 
-    /* =========================================
-       PRODUCT CARD HOVER EFFECT
-    ========================================= */
+    /* =====================================================
+       PRODUCT CARD HOVER
+    ===================================================== */
 
     const cards =
-        document.querySelectorAll(".catalog-card");
+        document.querySelectorAll(
+            ".catalog-card"
+        );
 
     cards.forEach((card) => {
 
-        card.addEventListener("mouseenter", () => {
+        card.addEventListener(
+            "mouseenter",
+            () => {
 
-            card.style.setProperty(
-                "--card-hover",
-                "1"
-            );
+                card.style.setProperty(
+                    "--card-hover",
+                    "1"
+                );
 
-        });
+            }
+        );
 
-        card.addEventListener("mouseleave", () => {
+        card.addEventListener(
+            "mouseleave",
+            () => {
 
-            card.style.setProperty(
-                "--card-hover",
-                "0"
-            );
+                card.style.setProperty(
+                    "--card-hover",
+                    "0"
+                );
 
-        });
+            }
+        );
 
     });
 
 
-    /* =========================================
+    /* =====================================================
+       WHATSAPP BUTTON
+    ===================================================== */
+
+    const whatsappButton =
+        document.querySelector(
+            ".whatsapp-float"
+        );
+
+    if (whatsappButton) {
+
+        whatsappButton.addEventListener(
+            "click",
+            () => {
+
+                /*
+                    WhatsApp opens through the normal
+                    browser/app behavior.
+                */
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
        BACK TO TOP
-    ========================================= */
+       Creates the button automatically.
+    ===================================================== */
 
     const backToTop =
-        document.querySelector(".back-to-top");
+        document.createElement("button");
 
-    if (backToTop) {
+    backToTop.className =
+        "back-to-top";
 
-        window.addEventListener("scroll", () => {
+    backToTop.setAttribute(
+        "aria-label",
+        "Back to top"
+    );
+
+    backToTop.innerHTML = "↑";
+
+    document.body.appendChild(backToTop);
+
+
+    const backToTopStyle =
+        document.createElement("style");
+
+    backToTopStyle.textContent = `
+        .back-to-top {
+            position: fixed;
+            right: 25px;
+            bottom: 95px;
+            z-index: 998;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 50%;
+            background: rgba(8,20,35,0.90);
+            color: #dbeafe;
+            font-size: 1.1rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.25s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: #2563eb;
+            border-color: #3b82f6;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 760px) {
+            .back-to-top {
+                right: 18px;
+                bottom: 82px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    `;
+
+    document.head.appendChild(
+        backToTopStyle
+    );
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
 
             if (window.scrollY > 500) {
 
-                backToTop.classList.add("show");
+                backToTop.classList.add(
+                    "show"
+                );
 
             } else {
 
-                backToTop.classList.remove("show");
+                backToTop.classList.remove(
+                    "show"
+                );
 
             }
 
-        });
+        },
+        { passive: true }
+    );
 
-        backToTop.addEventListener("click", () => {
+
+    backToTop.addEventListener(
+        "click",
+        () => {
 
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
 
-        });
+        }
+    );
+
+
+    /* =====================================================
+       IMAGE FALLBACK
+       Prevents broken brand images from looking ugly.
+    ===================================================== */
+
+    document.querySelectorAll(
+        ".brand-logo-box img"
+    ).forEach((image) => {
+
+        image.addEventListener(
+            "error",
+            () => {
+
+                image.style.display =
+                    "none";
+
+                const parent =
+                    image.parentElement;
+
+                if (parent) {
+
+                    parent.classList.add(
+                        "image-error"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+
+    /* =====================================================
+       PREVENT DOUBLE FORM SUBMISSIONS
+    ===================================================== */
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            () => {
+
+                const button =
+                    contactForm.querySelector(
+                        ".form-submit"
+                    );
+
+                if (!button) return;
+
+                button.dataset.originalText =
+                    button.textContent;
+
+                button.textContent =
+                    "Sending...";
+
+                button.style.opacity =
+                    "0.7";
+
+                button.style.cursor =
+                    "wait";
+
+            },
+            { once: false }
+        );
 
     }
+
+
+    /* =====================================================
+       PAGE READY
+    ===================================================== */
+
+    document.body.classList.add(
+        "page-ready"
+    );
 
 });
