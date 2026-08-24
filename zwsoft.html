@@ -8,7 +8,7 @@
     <title>ZWSOFT Software | Vaidesh IT Solutions</title>
 
     <meta name="description"
-          content="Explore ZWSOFT software solutions including ZWCAD, ZW3D and professional CAD solutions through Vaidesh IT Solutions.">
+        content="Explore ZWSOFT software solutions including ZWCAD, ZW3D and professional CAD solutions through Vaidesh IT Solutions.">
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,114 +16,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
+        rel="stylesheet">
 
     <style>
-
-        /* ================= ZWSOFT HERO ================= */
-
-        .product-hero {
-            padding: 150px 0 90px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-
-        .product-hero-content {
-            max-width: 900px;
-        }
-
-        .product-badge {
-            width: 64px;
-            height: 64px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 16px;
-
-            border: 1px solid rgba(80,150,255,0.45);
-
-            background: rgba(50,100,190,0.13);
-
-            color: #76a8ff;
-
-            font-size: 22px;
-            font-weight: 800;
-
-            margin-bottom: 28px;
-
-            box-shadow: 0 0 30px rgba(50,120,255,0.08);
-        }
-
-
-        .product-hero h1 {
-            font-size: clamp(48px, 7vw, 82px);
-
-            line-height: 1.02;
-
-            letter-spacing: -3px;
-
-            margin: 0 0 25px;
-        }
-
-
-        .product-hero h1 span {
-            color: #70a1ff;
-        }
-
-
-        .product-hero p {
-            max-width: 720px;
-
-            font-size: 19px;
-
-            line-height: 1.8;
-
-            color: #aebbd4;
-
-            margin-bottom: 35px;
-        }
-
-
-        .product-hero-buttons {
-            display: flex;
-
-            gap: 14px;
-
-            flex-wrap: wrap;
-        }
-
-
-        /* ================= PRODUCTS ================= */
+        /* ================= ZWSOFT PRODUCTS ================= */
 
         .zw-products {
-            padding: 100px 0;
+            padding: 145px 0 100px;
         }
-
 
         .zw-grid {
             display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
             gap: 20px;
-
             margin-top: 55px;
         }
 
-
         .zw-card {
             position: relative;
-
             overflow: hidden;
 
             min-height: 300px;
-
             padding: 32px;
 
             border: 1px solid rgba(255,255,255,0.09);
-
             border-radius: 20px;
 
             background:
@@ -138,7 +54,6 @@
                 border-color 0.3s ease,
                 box-shadow 0.3s ease;
         }
-
 
         .zw-card::after {
             content: "";
@@ -158,7 +73,6 @@
             pointer-events: none;
         }
 
-
         .zw-card:hover {
             transform: translateY(-6px);
 
@@ -167,7 +81,6 @@
             box-shadow:
                 0 18px 50px rgba(0,0,0,0.25);
         }
-
 
         .zw-icon {
             width: 56px;
@@ -186,41 +99,33 @@
             color: #75a6ff;
 
             font-size: 18px;
-
             font-weight: 800;
 
             margin-bottom: 25px;
         }
 
-
         .zw-card h3 {
             font-size: 24px;
-
             margin: 0 0 13px;
         }
-
 
         .zw-card p {
             color: #9eacc5;
 
             font-size: 15px;
-
             line-height: 1.7;
 
             margin: 0 0 25px;
         }
 
-
         .zw-card a {
             color: #69a0ff;
 
             font-size: 14px;
-
             font-weight: 700;
 
             text-decoration: none;
         }
-
 
         .zw-card a:hover {
             color: #9bc0ff;
@@ -236,7 +141,6 @@
                 1px solid rgba(255,255,255,0.07);
         }
 
-
         .zw-solution-grid {
             display: grid;
 
@@ -246,7 +150,6 @@
 
             margin-top: 50px;
         }
-
 
         .zw-solution-box {
             padding: 35px;
@@ -259,12 +162,10 @@
                 1px solid rgba(255,255,255,0.08);
         }
 
-
         .zw-number {
             color: #6fa2ff;
 
             font-size: 14px;
-
             font-weight: 800;
 
             letter-spacing: 1px;
@@ -272,13 +173,10 @@
             margin-bottom: 18px;
         }
 
-
         .zw-solution-box h3 {
             font-size: 22px;
-
             margin-bottom: 12px;
         }
-
 
         .zw-solution-box p {
             color: #9eacc5;
@@ -298,12 +196,10 @@
                 1px solid rgba(255,255,255,0.07);
         }
 
-
         .zw-cta-box {
             display: flex;
 
             align-items: center;
-
             justify-content: space-between;
 
             gap: 30px;
@@ -324,14 +220,12 @@
                 rgba(12,22,40,0.9);
         }
 
-
         .zw-cta-box h2 {
             font-size:
                 clamp(28px,4vw,44px);
 
             margin: 8px 0 0;
         }
-
 
         .zw-cta-box h2 span {
             color: #70a1ff;
@@ -352,40 +246,24 @@
 
             .zw-cta-box {
                 flex-direction: column;
-
                 align-items: flex-start;
             }
         }
 
-
         @media (max-width: 600px) {
 
-            .product-hero {
-                padding:
-                    120px 0 70px;
+            .zw-products {
+                padding: 120px 0 70px;
             }
-
-
-            .product-hero h1 {
-                letter-spacing: -2px;
-            }
-
-
-            .product-hero p {
-                font-size: 16px;
-            }
-
 
             .zw-card {
                 min-height: auto;
             }
 
-
             .zw-cta-box {
                 padding: 32px;
             }
         }
-
     </style>
 
 </head>
@@ -393,663 +271,446 @@
 
 <body>
 
+    <!-- ================= NAVBAR ================= -->
 
-<!-- ================= NAVBAR ================= -->
+    <header class="navbar">
 
-<header class="navbar">
+        <div class="container nav-container">
 
-    <div class="container nav-container">
-
-
-        <a href="index.html" class="logo">
-
-            <span>VAIDESH</span>
-
-            <small>
-                IT SOLUTIONS
-            </small>
-
-        </a>
-
-
-        <nav class="nav-links">
-
-            <a href="index.html">
-                Home
+            <a href="index.html" class="logo">
+                <span>VAIDESH</span>
+                <small>IT SOLUTIONS</small>
             </a>
 
-            <a href="index.html#solutions">
-                Solutions
-            </a>
+            <nav class="nav-links">
 
-            <a href="index.html#products">
-                Products
-            </a>
-
-            <a href="index.html#contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <a
-            href="index.html#contact"
-            class="nav-button"
-        >
-            Talk to an Expert
-        </a>
-
-
-    </div>
-
-</header>
-
-
-
-<!-- ================= MAIN ================= -->
-
-<main>
-
-
-<!-- ================= HERO ================= -->
-
-<section class="product-hero">
-
-    <div class="container product-hero-content">
-
-
-        <div class="product-badge">
-            ZW
-        </div>
-
-
-        <span class="section-label">
-            ZWSOFT SOFTWARE
-        </span>
-
-
-        <h1>
-
-            Professional CAD
-            <span>solutions.</span>
-
-        </h1>
-
-
-        <p>
-
-            Powerful and professional CAD and 3D design
-            solutions for engineering, manufacturing,
-            architecture and technical professionals.
-
-        </p>
-
-
-        <div class="product-hero-buttons">
-
-
-            <a
-                href="#products"
-                class="btn btn-primary"
-            >
-                Explore Products
-            </a>
-
-
-            <a
-                href="index.html#contact"
-                class="btn btn-secondary"
-            >
-                Enquire Now
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= PRODUCTS ================= -->
-
-<section
-    id="products"
-    class="zw-products"
->
-
-
-    <div class="container">
-
-
-        <div class="section-heading">
-
-
-            <span class="section-label">
-                ZWSOFT PRODUCTS
-            </span>
-
-
-            <h2>
-
-                Powerful tools for
-                <span>professional design.</span>
-
-            </h2>
-
-
-            <p>
-
-                Explore ZWSOFT's professional CAD,
-                mechanical design and 3D modelling
-                solutions.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="zw-grid">
-
-
-            <!-- ZWCAD -->
-
-            <div class="zw-card">
-
-
-                <div class="zw-icon">
-                    ZW
-                </div>
-
-
-                <h3>
-                    ZWCAD
-                </h3>
-
-
-                <p>
-
-                    Professional 2D drafting and 3D design
-                    software for architects, engineers,
-                    designers and technical professionals.
-
-                </p>
-
-
-                <a href="index.html#contact">
-
-                    Enquire about ZWCAD →
-
+                <a href="index.html">
+                    Home
                 </a>
 
-
-            </div>
-
-
-
-            <!-- ZW3D -->
-
-            <div class="zw-card">
-
-
-                <div class="zw-icon">
-                    3D
-                </div>
-
-
-                <h3>
-                    ZW3D
-                </h3>
-
-
-                <p>
-
-                    Professional 3D CAD/CAM software for
-                    product design, engineering and
-                    manufacturing workflows.
-
-                </p>
-
-
-                <a href="index.html#contact">
-
-                    Enquire about ZW3D →
-
+                <a href="index.html#solutions">
+                    Solutions
                 </a>
 
-
-            </div>
-
-
-
-            <!-- ZWMECHANICAL -->
-
-            <div class="zw-card">
-
-
-                <div class="zw-icon">
-                    ZM
-                </div>
-
-
-                <h3>
-                    ZW3D Mechanical
-                </h3>
-
-
-                <p>
-
-                    Mechanical design tools for engineering
-                    professionals working on detailed
-                    mechanical projects.
-
-                </p>
-
-
-                <a href="index.html#contact">
-
-                    Enquire about Mechanical →
-
+                <a href="index.html#products">
+                    Products
                 </a>
 
-
-            </div>
-
-
-
-            <!-- ZW DESIGN -->
-
-            <div class="zw-card">
-
-
-                <div class="zw-icon">
-                    ZD
-                </div>
-
-
-                <h3>
-                    ZW Design
-                </h3>
-
-
-                <p>
-
-                    Professional design and drafting tools
-                    designed to support modern engineering
-                    and design workflows.
-
-                </p>
-
-
                 <a href="index.html#contact">
-
-                    Enquire about ZW Design →
-
+                    Contact
                 </a>
 
+            </nav>
 
-            </div>
-
+            <a href="index.html#contact" class="nav-button">
+                Talk to an Expert
+            </a>
 
         </div>
 
-    </div>
-
-</section>
+    </header>
 
 
+    <!-- ================= MAIN ================= -->
 
-<!-- ================= SOLUTIONS ================= -->
+    <main>
 
-<section class="zw-solutions">
+        <!-- ================= PRODUCTS ================= -->
 
+        <section id="products" class="zw-products">
 
-    <div class="container">
+            <div class="container">
 
+                <div class="section-heading">
 
-        <div class="section-heading">
+                    <span class="section-label">
+                        ZWSOFT PRODUCTS
+                    </span>
 
+                    <h2>
+                        Choose the right
+                        <span>CAD solution.</span>
+                    </h2>
 
-            <span class="section-label">
-                ZWSOFT SOLUTIONS
-            </span>
+                    <p>
+                        Professional design and engineering
+                        software for different industries and
+                        workflows.
+                    </p>
 
-
-            <h2>
-
-                Built for
-                <span>professional workflows.</span>
-
-            </h2>
-
-
-            <p>
-
-                ZWSOFT solutions can support professionals
-                across design, engineering and manufacturing.
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="zw-solution-grid">
-
-
-            <div class="zw-solution-box">
-
-                <div class="zw-number">
-                    01
                 </div>
 
 
-                <h3>
-                    Architecture & Design
-                </h3>
+                <div class="zw-grid">
 
 
-                <p>
+                    <!-- ZWCAD -->
 
-                    Create precise drawings, layouts and
-                    3D designs for architectural and
-                    professional design projects.
+                    <div class="zw-card">
 
-                </p>
+                        <div class="zw-icon">
+                            ZW
+                        </div>
+
+                        <h3>
+                            ZWCAD
+                        </h3>
+
+                        <p>
+                            Professional 2D drafting and 3D design
+                            software for architects, engineers,
+                            designers and technical professionals.
+                        </p>
+
+                        <a href="index.html#contact">
+                            Enquire about ZWCAD →
+                        </a>
+
+                    </div>
+
+
+                    <!-- ZW3D -->
+
+                    <div class="zw-card">
+
+                        <div class="zw-icon">
+                            3D
+                        </div>
+
+                        <h3>
+                            ZW3D
+                        </h3>
+
+                        <p>
+                            Professional 3D CAD/CAM software for
+                            product design, engineering and
+                            manufacturing workflows.
+                        </p>
+
+                        <a href="index.html#contact">
+                            Enquire about ZW3D →
+                        </a>
+
+                    </div>
+
+
+                    <!-- ZW3D MECHANICAL -->
+
+                    <div class="zw-card">
+
+                        <div class="zw-icon">
+                            ZM
+                        </div>
+
+                        <h3>
+                            ZW3D Mechanical
+                        </h3>
+
+                        <p>
+                            Mechanical design tools for engineering
+                            professionals working on detailed
+                            mechanical projects.
+                        </p>
+
+                        <a href="index.html#contact">
+                            Enquire about Mechanical →
+                        </a>
+
+                    </div>
+
+
+                    <!-- ZW DESIGN -->
+
+                    <div class="zw-card">
+
+                        <div class="zw-icon">
+                            ZD
+                        </div>
+
+                        <h3>
+                            ZW Design
+                        </h3>
+
+                        <p>
+                            Professional design and drafting tools
+                            designed to support modern engineering
+                            and design workflows.
+                        </p>
+
+                        <a href="index.html#contact">
+                            Enquire about ZW Design →
+                        </a>
+
+                    </div>
+
+                </div>
 
             </div>
 
+        </section>
 
 
-            <div class="zw-solution-box">
+        <!-- ================= SOLUTIONS ================= -->
 
-                <div class="zw-number">
-                    02
+        <section class="zw-solutions">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        ZWSOFT SOLUTIONS
+                    </span>
+
+                    <h2>
+                        Built for
+                        <span>professional workflows.</span>
+                    </h2>
+
+                    <p>
+                        ZWSOFT solutions can support professionals
+                        across design, engineering and manufacturing.
+                    </p>
+
                 </div>
 
 
-                <h3>
-                    Engineering
-                </h3>
+                <div class="zw-solution-grid">
 
 
-                <p>
+                    <div class="zw-solution-box">
 
-                    Professional CAD tools for engineering,
-                    technical documentation and product
-                    development.
+                        <div class="zw-number">
+                            01
+                        </div>
 
-                </p>
+                        <h3>
+                            Architecture & Design
+                        </h3>
 
-            </div>
+                        <p>
+                            Create precise drawings, layouts and
+                            3D designs for architectural and
+                            professional design projects.
+                        </p>
+
+                    </div>
 
 
+                    <div class="zw-solution-box">
 
-            <div class="zw-solution-box">
+                        <div class="zw-number">
+                            02
+                        </div>
 
-                <div class="zw-number">
-                    03
+                        <h3>
+                            Engineering
+                        </h3>
+
+                        <p>
+                            Professional CAD tools for engineering,
+                            technical documentation and product
+                            development.
+                        </p>
+
+                    </div>
+
+
+                    <div class="zw-solution-box">
+
+                        <div class="zw-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Manufacturing
+                        </h3>
+
+                        <p>
+                            CAD and CAM solutions supporting product
+                            development and manufacturing workflows.
+                        </p>
+
+                    </div>
+
+
+                    <div class="zw-solution-box">
+
+                        <div class="zw-number">
+                            04
+                        </div>
+
+                        <h3>
+                            3D Product Design
+                        </h3>
+
+                        <p>
+                            Develop detailed 3D models and product
+                            designs for engineering and manufacturing.
+                        </p>
+
+                    </div>
+
                 </div>
 
-
-                <h3>
-                    Manufacturing
-                </h3>
-
-
-                <p>
-
-                    CAD and CAM solutions supporting product
-                    development and manufacturing workflows.
-
-                </p>
-
             </div>
 
+        </section>
 
 
-            <div class="zw-solution-box">
+        <!-- ================= CTA ================= -->
 
-                <div class="zw-number">
-                    04
+        <section class="zw-cta">
+
+            <div class="container">
+
+                <div class="zw-cta-box">
+
+                    <div>
+
+                        <span class="section-label">
+                            ZWSOFT SOFTWARE
+                        </span>
+
+                        <h2>
+                            Need a CAD
+                            <span>solution?</span>
+                        </h2>
+
+                    </div>
+
+                    <a
+                        href="index.html#contact"
+                        class="btn btn-primary"
+                    >
+                        Send an Enquiry
+                    </a>
+
                 </div>
 
-
-                <h3>
-                    3D Product Design
-                </h3>
-
-
-                <p>
-
-                    Develop detailed 3D models and product
-                    designs for engineering and manufacturing.
-
-                </p>
-
             </div>
 
+        </section>
 
-        </div>
-
-    </div>
-
-</section>
+    </main>
 
 
+    <!-- ================= FOOTER ================= -->
 
-<!-- ================= CTA ================= -->
+    <footer class="footer">
 
-<section class="zw-cta">
-
-
-    <div class="container">
-
-
-        <div class="zw-cta-box">
+        <div class="container footer-grid">
 
 
             <div>
 
-                <span class="section-label">
+                <a
+                    href="index.html"
+                    class="logo footer-logo"
+                >
 
-                    ZWSOFT SOFTWARE
+                    <span>
+                        VAIDESH
+                    </span>
 
-                </span>
+                    <small>
+                        IT SOLUTIONS
+                    </small>
 
+                </a>
 
-                <h2>
-
-                    Need a CAD
-                    <span>solution?</span>
-
-                </h2>
+                <p>
+                    Professional software and technology
+                    solutions for modern businesses.
+                </p>
 
             </div>
 
 
-            <a
-                href="index.html#contact"
-                class="btn btn-primary"
-            >
+            <div>
 
-                Send an Enquiry
+                <h4>
+                    Navigation
+                </h4>
 
-            </a>
+                <a href="index.html">
+                    Home
+                </a>
 
+                <a href="index.html#solutions">
+                    Solutions
+                </a>
 
-        </div>
+                <a href="index.html#products">
+                    Products
+                </a>
 
-    </div>
+                <a href="index.html#contact">
+                    Contact
+                </a>
 
-</section>
-
-
-</main>
-
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer">
-
-
-    <div class="container footer-grid">
+            </div>
 
 
-        <div>
+            <div>
 
+                <h4>
+                    Contact
+                </h4>
 
-            <a
-                href="index.html"
-                class="logo footer-logo"
-            >
+                <a href="mailto:info@vaideshitsolutions.in">
+                    info@vaideshitsolutions.in
+                </a>
+
+                <a href="tel:+919867434012">
+                    +91 9867434012
+                </a>
+
+                <a href="https://wa.me/919867434012">
+                    WhatsApp
+                </a>
 
                 <span>
-                    VAIDESH
+                    Thane, Maharashtra, India
                 </span>
 
-                <small>
-                    IT SOLUTIONS
-                </small>
-
-            </a>
-
-
-            <p>
-
-                Professional software and technology
-                solutions for modern businesses.
-
-            </p>
-
+            </div>
 
         </div>
 
 
+        <div class="footer-bottom">
 
-        <div>
+            <div class="container">
 
+                <p>
+                    © 2026 Vaidesh IT Solutions.
+                    All rights reserved.
+                </p>
 
-            <h4>
-                Navigation
-            </h4>
-
-
-            <a href="index.html">
-                Home
-            </a>
-
-
-            <a href="index.html#solutions">
-                Solutions
-            </a>
-
-
-            <a href="index.html#products">
-                Products
-            </a>
-
-
-            <a href="index.html#contact">
-                Contact
-            </a>
-
+            </div>
 
         </div>
 
+    </footer>
 
 
-        <div>
+    <!-- ================= WHATSAPP ================= -->
+
+    <a
+        href="https://wa.me/919867434012"
+        class="whatsapp-float"
+        aria-label="Chat with us on WhatsApp"
+    >
+
+        <span class="whatsapp-icon">
+            ☏
+        </span>
+
+    </a>
 
 
-            <h4>
-                Contact
-            </h4>
-
-
-            <a href="mailto:info@vaideshitsolutions.in">
-
-                info@vaideshitsolutions.in
-
-            </a>
-
-
-            <a href="tel:+919867434012">
-
-                +91 9867434012
-
-            </a>
-
-
-            <a href="https://wa.me/919867434012">
-
-                WhatsApp
-
-            </a>
-
-
-            <span>
-
-                Thane, Maharashtra, India
-
-            </span>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <div class="footer-bottom">
-
-
-        <div class="container">
-
-
-            <p>
-
-                © 2026 Vaidesh IT Solutions.
-                All rights reserved.
-
-            </p>
-
-
-        </div>
-
-    </div>
-
-
-</footer>
-
-
-
-<!-- ================= WHATSAPP ================= -->
-
-<a
-    href="https://wa.me/919867434012"
-    class="whatsapp-float"
-    aria-label="Chat with us on WhatsApp"
->
-
-    <span class="whatsapp-icon">
-        ☏
-    </span>
-
-</a>
-
-
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 
 </body>
 
