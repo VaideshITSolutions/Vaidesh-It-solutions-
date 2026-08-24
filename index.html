@@ -647,18 +647,19 @@
                 </div>
 
 
-                <form class="contact-form reveal" id="contactForm">
-
+                <form class="contact-form reveal" id="contactForm"
+      action="https://formspree.io/f/xljryepz"
+      method="POST">
                     <div class="form-row">
 
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" placeholder="Your name" required>
+                            <input type="text" name="name" placeholder="Your name" required>
                         </div>
 
                         <div class="form-group">
                             <label>Company</label>
-                            <input type="text" placeholder="Company name">
+                            <input type="text" name="company" placeholder="Company name">
                         </div>
 
                     </div>
@@ -668,12 +669,12 @@
 
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" placeholder="you@company.com" required>
+                            <input type="email" name="email" placeholder="you@company.com" required>
                         </div>
 
                         <div class="form-group">
                             <label>Phone</label>
-                            <input type="tel" placeholder="+91 XXXXX XXXXX">
+                            <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX">
                         </div>
 
                     </div>
@@ -682,7 +683,7 @@
                     <div class="form-group">
                         <label>Requirement</label>
 
-                        <select>
+                        <select name="requirement">
                             <option>Select a service</option>
                             <option>Software Solutions</option>
                             <option>Infrastructure</option>
@@ -700,7 +701,7 @@
                     <div class="form-group">
                         <label>Message</label>
 
-                        <textarea rows="5" placeholder="Tell us about your requirement..."></textarea>
+                        <textarea name="message" rows="5" placeholder="Tell us about your requirement..."></textarea>
                     </div>
 
 
