@@ -1,55 +1,166 @@
-// ================================
-// VAIDESH IT SOLUTIONS
-// Website JavaScript
-// ================================
+/* =========================================
+   VAIDESH IT SOLUTIONS
+   MAIN JAVASCRIPT
+========================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // -------------------------------
-    // Scroll Reveal Animation
-    // -------------------------------
+    /* =========================================
+       SCROLL REVEAL ANIMATION
+    ========================================= */
 
-    const revealElements = document.querySelectorAll(".reveal");
-
-    const revealObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                }
-            });
-        },
-        {
-            threshold: 0.12
-        }
+    const revealElements = document.querySelectorAll(
+        ".info-card, .catalog-card, .product-item, .contact-card, .section-heading, .hero-text, .hero-card"
     );
 
-    revealElements.forEach((element) => {
-        revealObserver.observe(element);
+    if ("IntersectionObserver" in window) {
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+
+                entries.forEach((entry) => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("reveal-visible");
+
+                        observer.unobserve(entry.target);
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        revealElements.forEach((element) => {
+
+            element.classList.add("reveal");
+
+            observer.observe(element);
+
+        });
+
+    } else {
+
+        revealElements.forEach((element) => {
+            element.classList.add("reveal-visible");
+        });
+
+    }
+
+
+    /* =========================================
+       ACTIVE NAVIGATION
+    ========================================= */
+
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    const navLinks = document.querySelectorAll(".nav-links a");
+
+    navLinks.forEach((link) => {
+
+        const linkPage =
+            link.getAttribute("href").split("/").pop();
+
+        if (linkPage === currentPage) {
+
+            link.classList.add("active");
+
+        } else {
+
+            link.classList.remove("active");
+
+        }
+
     });
 
 
-    // -------------------------------
-    // Smooth Navigation
-    // -------------------------------
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    const navContainer =
+        document.querySelector(".nav-container");
+
+    const nav =
+        document.querySelector(".nav-links");
+
+    if (navContainer && nav) {
+
+        const menuButton =
+            document.createElement("button");
+
+        menuButton.className = "mobile-menu-button";
+
+        menuButton.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+        menuButton.innerHTML = `
+            <span></span>
+            <span></span>
+            <span></span>
+        `;
+
+        navContainer.appendChild(menuButton);
+
+
+        menuButton.addEventListener("click", () => {
+
+            nav.classList.toggle("mobile-open");
+
+            menuButton.classList.toggle("open");
+
+        });
+
+
+        nav.querySelectorAll("a").forEach((link) => {
+
+            link.addEventListener("click", () => {
+
+                nav.classList.remove("mobile-open");
+
+                menuButton.classList.remove("open");
+
+            });
+
+        });
+
+    }
+
+
+    /* =========================================
+       SMOOTH INTERNAL LINKS
+    ========================================= */
 
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
-        link.addEventListener("click", function (event) {
+        link.addEventListener("click", (event) => {
 
-            const targetId = this.getAttribute("href");
+            const targetId =
+                link.getAttribute("href");
 
-            if (!targetId || targetId === "#") return;
+            if (!targetId || targetId === "#") {
+                return;
+            }
 
-            const target = document.querySelector(targetId);
+            const target =
+                document.querySelector(targetId);
 
             if (target) {
+
                 event.preventDefault();
 
                 target.scrollIntoView({
                     behavior: "smooth",
                     block: "start"
                 });
+
             }
 
         });
@@ -57,155 +168,93 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // -------------------------------
-    // Navbar Scroll Effect
-    // -------------------------------
+    /* =========================================
+       CONTACT FORM
+    ========================================= */
 
-    const navbar = document.querySelector(".navbar");
-
-    window.addEventListener("scroll", () => {
-
-        if (!navbar) return;
-
-        if (window.scrollY > 50) {
-            navbar.style.background = "rgba(7, 11, 20, 0.92)";
-        } else {
-            navbar.style.background = "rgba(7, 11, 20, 0.7)";
-        }
-
-    });
-
-
-    // -------------------------------
-    // Animated Counters
-    // -------------------------------
-
-    const counters = document.querySelectorAll(".counter");
-
-    const counterObserver = new IntersectionObserver(
-        (entries, observer) => {
-
-            entries.forEach((entry) => {
-
-                if (!entry.isIntersecting) return;
-
-                const counter = entry.target;
-                const target = Number(counter.dataset.target);
-
-                let current = 0;
-
-                const duration = 1500;
-                const startTime = performance.now();
-
-                function updateCounter(currentTime) {
-
-                    const progress = Math.min(
-                        (currentTime - startTime) / duration,
-                        1
-                    );
-
-                    current = Math.floor(
-                        progress * target
-                    );
-
-                    counter.textContent = current;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-
-                }
-
-                requestAnimationFrame(updateCounter);
-
-                observer.unobserve(counter);
-
-            });
-
-        },
-        {
-            threshold: 0.7
-        }
-    );
-
-    counters.forEach((counter) => {
-        counterObserver.observe(counter);
-    });
-
-
-    // -------------------------------
-    // Current Year
-    // -------------------------------
-
-    const yearElement = document.querySelector("#year");
-
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
-    }
-
-
-    // -------------------------------
-    // Mobile Menu
-    // -------------------------------
-
-    const menuButton = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-
-    if (menuButton && navLinks) {
-
-        menuButton.addEventListener("click", () => {
-
-            navLinks.classList.toggle("mobile-open");
-
-        });
-
-        navLinks.querySelectorAll("a").forEach((link) => {
-
-            link.addEventListener("click", () => {
-                navLinks.classList.remove("mobile-open");
-            });
-
-        });
-
-    }
-
-
-    // -------------------------------
-    // Contact Form
-    // -------------------------------
-
-    const contactForm = document.querySelector("#contact-form");
+    const contactForm =
+        document.querySelector(".contact-form");
 
     if (contactForm) {
 
-        contactForm.addEventListener("submit", (event) => {
+        contactForm.addEventListener("submit", () => {
 
-            event.preventDefault();
+            const submitButton =
+                contactForm.querySelector(".form-submit");
 
-            const name = contactForm.querySelector(
-                '[name="name"]'
-            )?.value;
+            if (submitButton) {
 
-            const message = contactForm.querySelector(
-                '[name="message"]'
-            )?.value;
+                submitButton.textContent =
+                    "Sending...";
 
-            if (!name || !message) {
-                alert("Please fill in all required fields.");
-                return;
+                submitButton.disabled = true;
+
             }
 
-            const whatsappMessage =
-                `Hello Vaidesh IT Solutions,%0A%0A` +
-                `Name: ${encodeURIComponent(name)}%0A` +
-                `Message: ${encodeURIComponent(message)}`;
+        });
 
-            const whatsappURL =
-                `https://wa.me/9191730338909?text=${whatsappMessage}`;
+    }
 
-            window.open(whatsappURL, "_blank");
+
+    /* =========================================
+       PRODUCT CARD HOVER EFFECT
+    ========================================= */
+
+    const cards =
+        document.querySelectorAll(".catalog-card");
+
+    cards.forEach((card) => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.setProperty(
+                "--card-hover",
+                "1"
+            );
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.setProperty(
+                "--card-hover",
+                "0"
+            );
+
+        });
+
+    });
+
+
+    /* =========================================
+       BACK TO TOP
+    ========================================= */
+
+    const backToTop =
+        document.querySelector(".back-to-top");
+
+    if (backToTop) {
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 500) {
+
+                backToTop.classList.add("show");
+
+            } else {
+
+                backToTop.classList.remove("show");
+
+            }
+
+        });
+
+        backToTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
 
         });
 
