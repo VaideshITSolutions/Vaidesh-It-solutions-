@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Antivirus | Vaidesh IT Solutions</title>
+    <title>Antivirus Software | Vaidesh IT Solutions</title>
 
     <meta name="description"
-          content="Explore antivirus and cybersecurity solutions including McAfee and Quick Heal through Vaidesh IT Solutions.">
+          content="Explore antivirus and cybersecurity software solutions including McAfee and Quick Heal through Vaidesh IT Solutions.">
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,121 +17,455 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
+
+    <style>
+
+        /* ================= ANTIVIRUS HERO ================= */
+
+        .product-hero {
+            padding: 150px 0 90px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .product-hero-content {
+            max-width: 900px;
+        }
+
+        .product-badge {
+            width: 64px;
+            height: 64px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            border: 1px solid rgba(80,180,150,0.45);
+
+            background: rgba(35,130,105,0.13);
+
+            color: #69d4b0;
+
+            font-size: 22px;
+            font-weight: 800;
+
+            margin-bottom: 28px;
+
+            box-shadow: 0 0 30px rgba(50,180,140,0.08);
+        }
+
+        .product-hero h1 {
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin: 0 0 25px;
+        }
+
+        .product-hero h1 span {
+            color: #69d4b0;
+        }
+
+        .product-hero p {
+            max-width: 720px;
+
+            font-size: 19px;
+            line-height: 1.8;
+
+            color: #aebbd4;
+
+            margin-bottom: 35px;
+        }
+
+        .product-hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+
+        /* ================= PRODUCTS ================= */
+
+        .antivirus-products {
+            padding: 100px 0;
+        }
+
+        .antivirus-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-top: 55px;
+        }
+
+        .antivirus-card {
+            position: relative;
+
+            overflow: hidden;
+
+            min-height: 300px;
+
+            padding: 32px;
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(18,40,40,0.9),
+                    rgba(10,18,28,0.96)
+                );
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .antivirus-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: rgba(60,190,150,0.08);
+
+            right: -85px;
+            top: -85px;
+
+            pointer-events: none;
+        }
+
+        .antivirus-card:hover {
+            transform: translateY(-6px);
+
+            border-color: rgba(70,190,155,0.55);
+
+            box-shadow:
+                0 18px 50px rgba(0,0,0,0.25);
+        }
+
+        .antivirus-icon {
+            width: 56px;
+            height: 56px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            border: 1px solid rgba(70,190,155,0.4);
+
+            background: rgba(40,150,120,0.14);
+
+            color: #69d4b0;
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            margin-bottom: 25px;
+        }
+
+        .antivirus-card h3 {
+            font-size: 24px;
+            margin: 0 0 13px;
+        }
+
+        .antivirus-card p {
+            color: #9eacc5;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            margin: 0 0 25px;
+        }
+
+        .antivirus-card a {
+            color: #69d4b0;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+        .antivirus-card a:hover {
+            color: #9ae8cf;
+        }
+
+
+        /* ================= SOLUTIONS ================= */
+
+        .antivirus-solutions {
+            padding: 100px 0;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+        .antivirus-solution-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+
+            margin-top: 50px;
+        }
+
+        .antivirus-solution-box {
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background: rgba(15,24,42,0.75);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+        }
+
+        .antivirus-number {
+            color: #69d4b0;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 18px;
+        }
+
+        .antivirus-solution-box h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .antivirus-solution-box p {
+            color: #9eacc5;
+
+            line-height: 1.7;
+
+            margin: 0;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .antivirus-cta {
+            padding: 80px 0;
+
+            border-top:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+        .antivirus-cta-box {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            padding: 50px;
+
+            border-radius: 24px;
+
+            border:
+                1px solid rgba(70,190,155,0.28);
+
+            background:
+                radial-gradient(
+                    circle at 85% 50%,
+                    rgba(45,170,135,0.16),
+                    transparent 40%
+                ),
+                rgba(12,22,40,0.9);
+        }
+
+        .antivirus-cta-box h2 {
+            font-size:
+                clamp(28px,4vw,44px);
+
+            margin: 8px 0 0;
+        }
+
+        .antivirus-cta-box h2 span {
+            color: #69d4b0;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .antivirus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .antivirus-solution-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .antivirus-cta-box {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .product-hero {
+                padding: 120px 0 70px;
+            }
+
+            .product-hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .product-hero p {
+                font-size: 16px;
+            }
+
+            .antivirus-card {
+                min-height: auto;
+            }
+
+            .antivirus-cta-box {
+                padding: 32px;
+            }
+        }
+
+    </style>
+
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
+
     <div class="container nav-container">
 
         <a href="index.html" class="logo">
+
             <span>VAIDESH</span>
-            <small>IT SOLUTIONS</small>
+
+            <small>
+                IT SOLUTIONS
+            </small>
+
         </a>
 
+
         <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#solutions">Solutions</a>
-            <a href="index.html#products">Products</a>
-            <a href="index.html#contact">Contact</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#solutions">
+                Solutions
+            </a>
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
         </nav>
 
-        <a href="index.html#contact" class="nav-button">
+
+        <a
+            href="index.html#contact"
+            class="nav-button"
+        >
             Talk to an Expert
         </a>
 
     </div>
+
 </header>
+
 
 
 <!-- ================= MAIN ================= -->
 
 <main>
 
+
 <!-- ================= HERO ================= -->
 
-<section class="hero">
+<section class="product-hero">
 
-    <div class="container hero-content">
+    <div class="container product-hero-content">
 
-        <div class="hero-text">
 
-            <div class="eyebrow">
-                CYBERSECURITY • ANTIVIRUS • PROTECTION
-            </div>
-
-            <h1>
-                Security solutions
-                <span>for a safer business.</span>
-            </h1>
-
-            <p>
-                Professional antivirus and cybersecurity solutions
-                designed to protect devices, data and businesses
-                from today's digital threats.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#products" class="btn btn-primary">
-                    Explore Products
-                </a>
-
-                <a href="index.html#contact" class="btn btn-secondary">
-                    Send an Enquiry
-                </a>
-
-            </div>
-
+        <div class="product-badge">
+            AV
         </div>
 
 
-        <div class="hero-card">
+        <span class="section-label">
+            ANTIVIRUS & CYBERSECURITY
+        </span>
 
-            <div class="hero-card-content">
 
-                <span class="hero-card-label">
-                    VAIDESH IT SOLUTIONS
-                </span>
+        <h1>
 
-                <h2>
-                    Protect.
-                    <br>
-                    Secure. Work.
-                </h2>
+            Security solutions
+            <span>for your business.</span>
 
-                <p>
-                    Reliable security solutions from trusted
-                    antivirus providers for businesses and users.
-                </p>
+        </h1>
 
-                <div class="hero-stat-grid">
 
-                    <div>
-                        <strong>Device</strong>
-                        <span>Protection</span>
-                    </div>
+        <p>
 
-                    <div>
-                        <strong>Malware</strong>
-                        <span>Security</span>
-                    </div>
+            Professional antivirus and cybersecurity solutions
+            designed to protect computers, business systems
+            and important digital data from modern threats.
 
-                    <div>
-                        <strong>Web</strong>
-                        <span>Protection</span>
-                    </div>
+        </p>
 
-                    <div>
-                        <strong>Business</strong>
-                        <span>Security</span>
-                    </div>
 
-                </div>
+        <div class="product-hero-buttons">
 
-            </div>
+
+            <a
+                href="#products"
+                class="btn btn-primary"
+            >
+                Explore Products
+            </a>
+
+
+            <a
+                href="index.html#contact"
+                class="btn btn-secondary"
+            >
+                Enquire Now
+            </a>
+
 
         </div>
 
@@ -139,78 +474,117 @@
 </section>
 
 
+
 <!-- ================= PRODUCTS ================= -->
 
-<section id="products" class="section products-section">
+<section
+    id="products"
+    class="antivirus-products"
+>
+
 
     <div class="container">
 
+
         <div class="section-heading">
+
 
             <span class="section-label">
                 ANTIVIRUS PRODUCTS
             </span>
 
+
             <h2>
-                Security from
+
+                Protection from
                 <span>trusted brands.</span>
+
             </h2>
 
+
             <p>
-                Explore antivirus solutions suitable for
-                individuals, professionals and businesses.
+
+                Explore antivirus and security solutions
+                available through Vaidesh IT Solutions.
+
             </p>
+
 
         </div>
 
 
-        <div class="catalog-grid">
+
+        <div class="antivirus-grid">
 
 
-            <!-- MCAFEE -->
+            <!-- McAFEE -->
 
-            <div class="catalog-card">
+            <div class="antivirus-card">
 
-                <div class="brand-logo-box">
-                    <span>Mc</span>
+
+                <div class="antivirus-icon">
+                    MC
                 </div>
 
-                <h3>McAfee</h3>
+
+                <h3>
+                    McAfee
+                </h3>
+
 
                 <p>
-                    Comprehensive digital security solutions
-                    designed to protect devices, identities and
-                    personal information from online threats.
+
+                    Security and antivirus solutions designed
+                    to protect devices, personal information
+                    and digital activities from online threats.
+
                 </p>
 
-                <a href="index.html#contact" class="catalog-link">
-                    Enquire About McAfee →
+
+                <a href="index.html#contact">
+
+                    Enquire about McAfee →
+
                 </a>
 
+
             </div>
+
 
 
             <!-- QUICK HEAL -->
 
-            <div class="catalog-card">
+            <div class="antivirus-card">
 
-                <div class="brand-logo-box">
-                    <span>QH</span>
+
+                <div class="antivirus-icon">
+                    QH
                 </div>
 
-                <h3>Quick Heal</h3>
+
+                <h3>
+                    Quick Heal
+                </h3>
+
 
                 <p>
-                    Antivirus and endpoint security solutions
-                    designed to protect users and businesses
-                    against malware and digital threats.
+
+                    Professional antivirus and endpoint
+                    security solutions for individuals,
+                    businesses and organizations.
+
                 </p>
 
-                <a href="index.html#contact" class="catalog-link">
-                    Enquire About Quick Heal →
+
+                <a href="index.html#contact">
+
+                    Enquire about Quick Heal →
+
                 </a>
 
+
             </div>
+
 
         </div>
 
@@ -219,88 +593,138 @@
 </section>
 
 
-<!-- ================= SECURITY SOLUTIONS ================= -->
 
-<section class="section">
+<!-- ================= SOLUTIONS ================= -->
+
+<section class="antivirus-solutions">
+
 
     <div class="container">
 
+
         <div class="section-heading">
+
 
             <span class="section-label">
                 SECURITY SOLUTIONS
             </span>
 
+
             <h2>
+
                 Protection for
-                <span>every requirement.</span>
+                <span>modern businesses.</span>
+
             </h2>
 
+
             <p>
-                Choose security solutions based on your devices,
-                business requirements and level of protection needed.
+
+                Choose security solutions suited to your
+                devices, users and business requirements.
+
             </p>
+
 
         </div>
 
 
-        <div class="info-grid">
+
+        <div class="antivirus-solution-grid">
 
 
-            <div class="info-card">
+            <div class="antivirus-solution-box">
 
-                <div class="card-number">01</div>
+                <div class="antivirus-number">
+                    01
+                </div>
 
-                <h3>Antivirus Protection</h3>
+
+                <h3>
+                    Antivirus Protection
+                </h3>
+
 
                 <p>
-                    Protection against viruses, malware,
-                    ransomware and other digital threats.
+
+                    Help protect computers and devices from
+                    viruses, malware and other digital threats.
+
                 </p>
 
             </div>
 
 
-            <div class="info-card">
 
-                <div class="card-number">02</div>
+            <div class="antivirus-solution-box">
 
-                <h3>Web Security</h3>
+                <div class="antivirus-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Endpoint Security
+                </h3>
+
 
                 <p>
-                    Help protect users from malicious websites,
-                    downloads and online threats.
+
+                    Security solutions designed to help
+                    businesses protect endpoints and users.
+
                 </p>
 
             </div>
 
 
-            <div class="info-card">
 
-                <div class="card-number">03</div>
+            <div class="antivirus-solution-box">
 
-                <h3>Business Security</h3>
+                <div class="antivirus-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Business Security
+                </h3>
+
 
                 <p>
-                    Security solutions designed to help businesses
-                    protect their systems and digital assets.
+
+                    Security solutions for organizations
+                    looking to improve their overall digital
+                    protection.
+
                 </p>
 
             </div>
 
 
-            <div class="info-card">
 
-                <div class="card-number">04</div>
+            <div class="antivirus-solution-box">
 
-                <h3>Device Security</h3>
+                <div class="antivirus-number">
+                    04
+                </div>
+
+
+                <h3>
+                    Digital Protection
+                </h3>
+
 
                 <p>
-                    Protection for computers and other supported
-                    devices against common cybersecurity threats.
+
+                    Help protect important files, devices
+                    and digital information against modern
+                    cybersecurity threats.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -308,184 +732,194 @@
 
 </section>
 
-
-<!-- ================= WHY VAIDESH ================= -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span class="section-label">
-                WHY VAIDESH
-            </span>
-
-            <h2>
-                The right security
-                <span>for your needs.</span>
-            </h2>
-
-            <p>
-                We help businesses and users identify suitable
-                antivirus and cybersecurity solutions.
-            </p>
-
-        </div>
-
-
-        <div class="info-grid">
-
-            <div class="info-card">
-
-                <div class="card-number">01</div>
-
-                <h3>Trusted Security Brands</h3>
-
-                <p>
-                    Access security solutions from established
-                    antivirus providers.
-                </p>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="card-number">02</div>
-
-                <h3>Right Product</h3>
-
-                <p>
-                    We help you select a solution based on your
-                    device and security requirements.
-                </p>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <div class="card-number">03</div>
-
-                <h3>Professional Assistance</h3>
-
-                <p>
-                    Get assistance with your software and
-                    cybersecurity requirements.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 <!-- ================= CTA ================= -->
 
-<section class="cta-section">
+<section class="antivirus-cta">
 
-    <div class="container cta-content">
 
-        <div>
+    <div class="container">
 
-            <span class="section-label">
-                ANTIVIRUS & SECURITY
-            </span>
 
-            <h2>
-                Need better
-                <span>protection?</span>
-            </h2>
+        <div class="antivirus-cta-box">
+
+
+            <div>
+
+                <span class="section-label">
+
+                    ANTIVIRUS & SECURITY
+
+                </span>
+
+
+                <h2>
+
+                    Need better
+                    <span>protection?</span>
+
+                </h2>
+
+            </div>
+
+
+            <a
+                href="index.html#contact"
+                class="btn btn-primary"
+            >
+
+                Send an Enquiry
+
+            </a>
+
 
         </div>
-
-        <a href="index.html#contact" class="btn btn-primary">
-            Send an Enquiry
-        </a>
 
     </div>
 
 </section>
 
+
 </main>
+
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
+
     <div class="container footer-grid">
 
+
         <div>
 
-            <a href="index.html" class="logo footer-logo">
-                <span>VAIDESH</span>
-                <small>IT SOLUTIONS</small>
+
+            <a
+                href="index.html"
+                class="logo footer-logo"
+            >
+
+                <span>
+                    VAIDESH
+                </span>
+
+                <small>
+                    IT SOLUTIONS
+                </small>
+
             </a>
+
 
             <p>
+
                 Professional software and technology
                 solutions for modern businesses.
+
             </p>
 
-        </div>
-
-
-        <div>
-
-            <h4>Navigation</h4>
-
-            <a href="index.html">Home</a>
-            <a href="index.html#solutions">Solutions</a>
-            <a href="index.html#products">Products</a>
-            <a href="index.html#contact">Contact</a>
 
         </div>
 
 
+
         <div>
 
-            <h4>Contact</h4>
+
+            <h4>
+                Navigation
+            </h4>
+
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a href="index.html#solutions">
+                Solutions
+            </a>
+
+
+            <a href="index.html#products">
+                Products
+            </a>
+
+
+            <a href="index.html#contact">
+                Contact
+            </a>
+
+
+        </div>
+
+
+
+        <div>
+
+
+            <h4>
+                Contact
+            </h4>
+
 
             <a href="mailto:info@vaideshitsolutions.in">
+
                 info@vaideshitsolutions.in
+
             </a>
+
 
             <a href="tel:+919867434012">
+
                 +91 9867434012
+
             </a>
+
 
             <a href="https://wa.me/919867434012">
+
                 WhatsApp
+
             </a>
 
+
             <span>
+
                 Thane, Maharashtra, India
+
             </span>
+
 
         </div>
 
+
     </div>
+
 
 
     <div class="footer-bottom">
 
+
         <div class="container">
 
+
             <p>
+
                 © 2026 Vaidesh IT Solutions.
                 All rights reserved.
+
             </p>
+
 
         </div>
 
     </div>
 
+
 </footer>
+
 
 
 <!-- ================= WHATSAPP ================= -->
@@ -495,11 +929,18 @@
     class="whatsapp-float"
     aria-label="Chat with us on WhatsApp"
 >
-    <span class="whatsapp-icon">☏</span>
+
+    <span class="whatsapp-icon">
+        ☏
+    </span>
+
 </a>
+
 
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
