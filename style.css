@@ -1411,3 +1411,114 @@ img {
     background: #0d1422;
     color: #ffffff;
 }
+/* ================= PRODUCT PAGE ================= */
+
+.product-page {
+    padding-top: 120px;
+}
+
+.product-page .section-heading {
+    max-width: 850px;
+}
+
+
+/* PRODUCT MARK */
+
+.brand-mark {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(77, 148, 255, 0.45);
+
+    border-radius: 16px;
+
+    background: rgba(40, 80, 150, 0.18);
+
+    color: #6ea2ff;
+
+    font-size: 22px;
+    font-weight: 800;
+
+    margin-bottom: 30px;
+}
+
+
+/* PRODUCT FEATURES */
+
+.product-features {
+    list-style: none;
+
+    padding: 0;
+    margin: 24px 0 30px;
+}
+
+.product-features li {
+    position: relative;
+
+    padding-left: 20px;
+    margin-bottom: 10px;
+
+    color: #aebbd4;
+
+    font-size: 14px;
+}
+
+.product-features li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 0;
+
+    color: #6ea2ff;
+
+    font-weight: 700;
+}
+
+
+/* FEATURED PRODUCT */
+
+.featured-product {
+    border-color: rgba(77, 148, 255, 0.65);
+}
+
+.product-badge {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    margin-bottom: 18px;
+
+    border-radius: 20px;
+
+    background: rgba(77, 148, 255, 0.12);
+
+    border: 1px solid rgba(77, 148, 255, 0.3);
+
+    color: #6ea2ff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .product-page {
+        padding-top: 90px;
+    }
+
+    .brand-mark {
+        width: 58px;
+        height: 58px;
+    }
+
+}
