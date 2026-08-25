@@ -1522,3 +1522,34 @@ img {
     }
 
 }
+/* ================= BRAND SHORT FORM ================= */
+
+.brand-short {
+    width: 68px;
+    height: 68px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: rgba(70, 130, 255, 0.08);
+    border: 1px solid rgba(70, 140, 255, 0.35);
+
+    color: #6ea0ff;
+
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    margin-bottom: 28px;
+
+    transition: all 0.3s ease;
+}
+
+.catalog-card:hover .brand-short {
+    background: rgba(70, 130, 255, 0.15);
+    border-color: #5f9cff;
+    transform: translateY(-3px);
+}
