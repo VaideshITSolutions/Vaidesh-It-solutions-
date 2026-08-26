@@ -110,8 +110,24 @@ img {
 
 .logo {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     line-height: 1;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
     gap: 5px;
 }
 
