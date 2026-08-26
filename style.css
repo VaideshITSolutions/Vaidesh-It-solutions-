@@ -112,20 +112,19 @@ img {
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    line-height: 1;
     gap: 10px;
+    line-height: 1;
     text-decoration: none;
 }
 
-.logo-icon {
-    width: 32px;
-    height: 32px;
+.logo img {
+    width: 30px;
+    height: 30px;
     object-fit: contain;
-    display: block;
     flex-shrink: 0;
 }
 
-.logo-text {
+.logo > div {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -143,7 +142,6 @@ img {
     letter-spacing: 2.5px;
     color: var(--text-muted);
 }
-
 
 /* ================= NAV LINKS ================= */
 
